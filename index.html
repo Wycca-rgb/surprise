@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willkommen</title>
+    <style>
+        body {
+            background-color: #b35217;
+            color: #F5EDE0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #quote, #liebeGrunde {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #F5EDE0;
+            color: #4A403A;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #D4CFC5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Willkommen auf deiner Überraschungsseite!</h1>
+    <p id="quote"></p>
+    <button onclick="zeigeZufallsspruch()">Neuen Spruch anzeigen</button>
+
+    <p id="liebeGrunde"></p>
+    <button onclick="zeigeLiebeGrunde()">Warum ich dich liebe</button>
+
+    <script>
+        const sprueche = [
+            "Die schönsten Momente entstehen oft in der Stille des Alltags.",
+            "Jeder Tag ist eine neue Seite in unserem gemeinsamen Abenteuer.",
+            "Manchmal ist der beste Weg, die Welt zu sehen, durch die Augen eines Menschen, den man liebt.",
+            "Du bist nicht nur ein Teil meines Lebens – du bist das Herzstück.",
+            "Zusammen schaffen wir alles, was das Leben uns bringt.",
+            "Auch wenn die Welt uns manchmal trennt, weiß ich, dass wir uns immer nahe sind.",
+            "Leben ist das, was passiert, während wir Pläne schmieden – und du bist der schönste Plan, den ich nie gemacht habe.",
+            "Unsere Erinnerungen sind die Sterne, die die Dunkelheit erhellen."
+        ];
+
+        const liebeGrunde = [
+            "Ich liebe dein Lächeln, es macht meinen Tag immer heller.",
+            "Du bist immer für mich da, egal was passiert.",
+            "Deine Leidenschaft für das, was du tust, inspiriert mich.",
+            "Du schaffst es immer, mich zum Lachen zu bringen.",
+            "Deine Geduld und dein Verständnis geben mir Kraft.",
+            "Mit dir fühle ich mich komplett und geliebt.",
+            "Du bist mein bester Freund und mein Lieblingsmensch.",
+            "Ich schätze die kleinen Dinge, die du für mich tust."
+        ];
+
+        function zeigeZufallsspruch() {
+            const zufallIndex = Math.floor(Math.random() * sprueche.length);
+            document.getElementById("quote").textContent = sprueche[zufallIndex];
+        }
+
+        function zeigeLiebeGrunde() {
+            const zufallIndex = Math.floor(Math.random() * liebeGrunde.length);
+            document.getElementById("liebeGrunde").textContent = liebeGrunde[zufallIndex];
+        }
+
+        zeigeZufallsspruch();
+    </script>
+
+</body>
+</html>
